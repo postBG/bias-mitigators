@@ -1,14 +1,12 @@
-from multiprocessing import Process
-from torchvision import datasets, transforms
-
-import numpy as np
-import copy
-import os, json
-import itertools
-import cv2
-from emnist import extract_training_samples, extract_test_samples
 import colorsys
+import copy
+import json
+import os
 from json import JSONEncoder
+
+import cv2
+import numpy as np
+from emnist import extract_training_samples, extract_test_samples
 
 NUM_CLASSES = 10
 

@@ -1,17 +1,8 @@
-from multiprocessing import Process
-from torchvision import datasets, transforms
-
-import numpy as np
-import copy
-import os, json
-import itertools
-import cv2
-from emnist import extract_training_samples, extract_test_samples
-import colorsys
-from json import JSONEncoder
-from datasets.biased_mnist_generator_utils import *
-import yaml
 import argparse
+
+import yaml
+
+from datasets.biased_mnist_generator_utils import *
 
 NUM_CLASSES = 10
 
@@ -31,7 +22,7 @@ class BiasedMNISTGenerator():
     BIAS_LETTER = 'letter'
     BIAS_LETTER_COLOR = 'letter_color'
     FACTORS_v1 = [BIAS_DIGIT_COLOR, BIAS_TEXTURE, BIAS_TEXTURE_COLOR,
-                    BIAS_DIGIT_POSITION, BIAS_LETTER, BIAS_LETTER_COLOR]
+                  BIAS_DIGIT_POSITION, BIAS_LETTER, BIAS_LETTER_COLOR]
 
     def __init__(self, original_mnist_dir, textures_dir, split, bias_config, cell_dim=32):
         """
