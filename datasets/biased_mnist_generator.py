@@ -1,6 +1,7 @@
 import argparse
 
 import yaml
+from torchvision import datasets, transforms
 
 from datasets.biased_mnist_generator_utils import *
 
